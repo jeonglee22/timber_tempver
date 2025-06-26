@@ -1,0 +1,89 @@
+#pragma once
+#include <iostream>
+#include "Singleton.h"
+#include <unordered_map>
+#include <vector>
+
+template <typename T>
+class ResourceMgr : public Singleton<ResourceMgr<T>>
+{
+	friend Singleton<ResourceMgr<T>>;
+
+protected:
+	ResourceMgr() = default;
+	virtual ~ResourceMgr()
+	{
+		for (auto pair : resources)
+		{
+			delete pair.second;
+		}
+		resources.clear();
+	};
+
+	ResourceMgr(const ResourceMgr&) = delete;
+	ResourceMgr* operator=(const ResourceMgr&) = delete;
+
+	std::unordered_map<std::string, T*> resources;
+
+	static T Empty;
+
+public:
+	void Load(const std::vector<std::string>& id)
+	{
+		for(const auto& iter : id)
+		{
+			Load(iter);
+		}
+	}
+
+	bool Load(const std::string& id)
+	{
+		auto it = resources.find(id);
+		if (it != resources.end())
+		{
+			return false;
+		}
+
+		T* res = new T();
+		bool success = res->loadFromFile(id);
+		if (!success)
+		{
+			return false;
+		}
+
+		resources.insert({ id, res });
+	}
+
+	void UnLoad(const std::vector<std::string>& id)
+	{
+		for(auto iter : id)
+		{
+			UnLoad(iter);
+		}
+	}
+
+	bool UnLoad(const std::string& id)
+	{
+		auto it = resources.find(id);
+		if (it == resources.end())
+		{
+			return false;
+		}
+
+		delete it->second;
+		resources.erase(it);
+	}
+
+	T& Get(const std::string& id)
+	{
+		auto it = resources.find(id);
+		if (it == resources.end())
+		{
+			return Empty;
+		}
+		return *(it->second);
+	};
+};
+
+template<typename T>
+T ResourceMgr<T>::Empty;
