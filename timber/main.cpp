@@ -1,6 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "InputManager.h"
+#include "InputManagerVector.h"
 #include "ResourceMgr.h"
 #include <vector>
 

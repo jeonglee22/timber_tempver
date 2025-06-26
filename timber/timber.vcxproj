@@ -137,10 +137,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="InputManager.cpp" />
+    <ClCompile Include="InputManagerVector.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="InputManager.h" />
+    <ClInclude Include="InputManagerVector.h" />
     <ClInclude Include="ResourceMgr.h" />
     <ClInclude Include="Singleton.h" />
   </ItemGroup>

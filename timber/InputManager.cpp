@@ -2,18 +2,12 @@
 #include "InputManager.h"
 #include <iostream>
 
-//std::list<sf::Keyboard::Key> InputManager::downKeys;
-//std::list<sf::Keyboard::Key> InputManager::heldKeys;
-//std::list<sf::Keyboard::Key> InputManager::upKeys;
-
-std::vector<int> InputManager::downKeys(sf::Keyboard::KeyCount);
-std::vector<int> InputManager::heldKeys(sf::Keyboard::KeyCount);
-std::vector<int> InputManager::upKeys(sf::Keyboard::KeyCount);
+std::list<sf::Keyboard::Key> InputManager::downKeys;
+std::list<sf::Keyboard::Key> InputManager::heldKeys;
+std::list<sf::Keyboard::Key> InputManager::upKeys;
 
 void InputManager::Init()
 {
-	downKeys.resize(sf::Keyboard::KeyCount);
-	upKeys.resize(sf::Keyboard::KeyCount);
 }
 
 void InputManager::Clear()
@@ -29,19 +23,16 @@ void InputManager::UpdateEvent(const sf::Event& ev)
 	case sf::Event::KeyPressed:
 		if (!Contains(heldKeys, ev.key.code))
 		{
-			downKeys[ev.key.code] = 1;
-			heldKeys[ev.key.code] = 1;
+			downKeys.push_back(ev.key.code);
+			heldKeys.push_back(ev.key.code);
 		}
 		break;
 	case sf::Event::KeyReleased:
-		if (Contains(heldKeys, ev.key.code))
-		{
-			heldKeys[ev.key.code] = 0;
-			upKeys[ev.key.code] = 1;
-		}
+		Remove(heldKeys, ev.key.code);
+		upKeys.push_back(ev.key.code);
 		break;
 	}
-	
+
 }
 
 void InputManager::Update(float dt)
@@ -64,20 +55,12 @@ bool InputManager::GetKey(sf::Keyboard::Key key)
 	return Contains(heldKeys, key);
 }
 
-bool InputManager::Contains(const std::vector<int>& vector, sf::Keyboard::Key key)
+bool InputManager::Contains(const std::list<sf::Keyboard::Key>& list, sf::Keyboard::Key key)
 {
-	if (key == sf::Keyboard::Unknown)
-	{
-		return false;
-	}
-	return vector[key];
+	return std::find(list.begin(), list.end(), key) != list.end();
 }
 
-void InputManager::Remove(std::vector<int>& vector, sf::Keyboard::Key key)
+void InputManager::Remove(std::list<sf::Keyboard::Key>& list, sf::Keyboard::Key key)
 {
-	if (key != sf::Keyboard::Unknown)
-	{
-		vector[key] = 0;
-	}
-	
+	list.remove(key);
 }
