@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "SpriteGO.h"
+#include "TextGO.h"
 
 int main()
 {
@@ -8,13 +9,19 @@ int main()
     shape.setFillColor(sf::Color::Green);
 
     TEXTURE_MGR.Load("graphics/player.png");
+    FONT_MGR.Load("fonts/KOMIKAP_.ttf");
 
     SpriteGO spriteGo("graphics/player.png");
     spriteGo.Init();
-
     spriteGo.setOrigin(Origins::TC);
-
     spriteGo.Reset();
+
+    TextGO textGo("fonts/KOMIKAP_.ttf");
+    textGo.Init();
+    textGo.setOrigin(Origins::MC);
+    textGo.Reset();
+    textGo.setText("test string");
+    textGo.setPosition({ window.getSize().x /2.f, window.getSize().y / 2.f });
 
     while (window.isOpen())
     {
@@ -32,11 +39,13 @@ int main()
         // update
         InputManager::Update(0);
         spriteGo.Update(0);
+        textGo.Update(0);
 
         // draw
         window.clear();
         //window.draw(shape);
         spriteGo.Draw(window);
+        textGo.Draw(window);
         window.display();
     }
 

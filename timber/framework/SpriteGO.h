@@ -6,7 +6,6 @@ protected:
 	sf::Sprite sprite;
 	std::string textureID;
 
-
 public:
 	SpriteGO(const std::string& textID = "", const std::string& name = "");
 	~SpriteGO() override = default;
