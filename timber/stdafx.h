@@ -19,3 +19,5 @@
 #include "InputManager.h"
 #include "Singleton.h"
 #include "Utils.h"
+#include "GameObject.h"
+#include "Scene.h"
