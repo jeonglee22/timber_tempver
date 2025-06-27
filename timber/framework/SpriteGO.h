@@ -20,6 +20,7 @@ public:
 	void setRotation(float rotation) override;
 	void setScale(const sf::Vector2f& scale) override;
 	void setOrigin(const sf::Vector2f& origin) override;
+	void setOrigin(Origins preset) override;
 
 	// GameObject을(를) 통해 상속됨
 	void Init() override;

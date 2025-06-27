@@ -12,6 +12,8 @@ protected:
 	sf::Vector2f scale;
 	sf::Vector2f origin;
 
+	Origins originPreset;
+
 public:
 	GameObject(const std::string& name = "");
 	virtual ~GameObject() {};
@@ -22,6 +24,7 @@ public:
 	virtual void setRotation(float rotation) { this->rotation = rotation; };
 	virtual void setScale(const sf::Vector2f& scale) { this->scale = scale; };
 	virtual void setOrigin(const sf::Vector2f& origin) { this->origin = origin; };
+	virtual void setOrigin(Origins preset) { originPreset = preset; };
 
 	std::string getName() const { return name; };
 	bool getActive() const { return active; };

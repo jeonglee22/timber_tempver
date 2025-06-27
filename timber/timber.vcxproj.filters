@@ -33,6 +33,9 @@
     <ClCompile Include="framework\SpriteGO.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="framework\Utils.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework\InputManagerVector.h">
@@ -54,6 +57,12 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="framework\SpriteGO.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="framework\Defines.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="framework\Utils.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

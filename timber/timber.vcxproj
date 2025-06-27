@@ -147,8 +147,10 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="framework\Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="framework\Defines.h" />
     <ClInclude Include="framework\GameObject.h" />
     <ClInclude Include="framework\InputManager.h" />
     <ClInclude Include="framework\InputManagerVector.h" />
@@ -156,6 +158,7 @@
     <ClInclude Include="framework\Singleton.h" />
     <ClInclude Include="framework\SpriteGO.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="framework\Utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -14,6 +14,8 @@
 #include <SFML/Window/Event.hpp>
 
 // FRAMEWORK
+#include "Defines.h"
 #include "ResourceMgr.h"
 #include "InputManager.h"
 #include "Singleton.h"
+#include "Utils.h"

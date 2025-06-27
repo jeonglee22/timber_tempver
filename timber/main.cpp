@@ -11,6 +11,9 @@ int main()
 
     SpriteGO spriteGo("graphics/player.png");
     spriteGo.Init();
+
+    spriteGo.setOrigin(Origins::TC);
+
     spriteGo.Reset();
 
     while (window.isOpen())
