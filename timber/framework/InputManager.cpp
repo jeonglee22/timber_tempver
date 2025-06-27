@@ -1,6 +1,5 @@
-#include <algorithm>
+#include "stdafx.h"
 #include "InputManager.h"
-#include <iostream>
 
 std::list<sf::Keyboard::Key> InputManager::downKeys;
 std::list<sf::Keyboard::Key> InputManager::heldKeys;

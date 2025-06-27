@@ -1,9 +1,5 @@
-#include <SFML/Graphics.hpp>
-#include <iostream>
-#include "InputManager.h"
-#include "InputManagerVector.h"
-#include "ResourceMgr.h"
-#include <vector>
+#include "stdafx.h"
+#include "SpriteGO.h"
 
 int main()
 {
@@ -11,28 +7,15 @@ int main()
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);
 
-    InputManager::Init();
-    InputManager::GetKeyDown(sf::Keyboard::A);
+    TEXTURE_MGR.Load("graphics/player.png");
 
-    std::vector<std::string> files({
-            "graphics/player.png",
-            "graphics/player.png",
-            "graphics/player.png",
-            "graphics/player.png",
-            "graphics/player.png",
-            "graphics/player.png",
-            "graphics/player.png"
-        });
-
-    ResourceMgr<sf::Texture>::Instance().Load(files);
-
-    sf::Sprite player;
-    player.setTexture(ResourceMgr<sf::Texture>::Instance().Get("graphics/player.png"));
+    SpriteGO spriteGo("graphics/player.png");
+    spriteGo.Init();
+    spriteGo.Reset();
 
     while (window.isOpen())
     {
         InputManager::Clear();
-        InputManager::Init();
 
         sf::Event event;
         while (window.pollEvent(event))
@@ -45,23 +28,16 @@ int main()
 
         // update
         InputManager::Update(0);
-
-        if (InputManager::GetKeyDown(sf::Keyboard::A))
-        {
-            std::cout << "Key Down: A" << std::endl;
-        }
-
-        if (InputManager::GetKeyUp(sf::Keyboard::A))
-        {
-            std::cout << "Key Up: A" << std::endl;
-        }
+        spriteGo.Update(0);
 
         // draw
         window.clear();
         //window.draw(shape);
-        window.draw(player);
+        spriteGo.Draw(window);
         window.display();
     }
+
+    spriteGo.Release();
 
     return 0;
 }

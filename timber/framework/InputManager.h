@@ -1,8 +1,5 @@
 #pragma once
-#include <list>
-#include <vector>
-#include <SFML/Window/Keyboard.hpp>
-#include <SFML/Window/Event.hpp>
+#include "stdafx.h"
 
 class InputManager
 {
@@ -26,5 +23,3 @@ public:
 	static void Remove(std::list<sf::Keyboard::Key>& list, sf::Keyboard::Key key);
 
 };
-
-

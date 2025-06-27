@@ -1,6 +1,5 @@
-#include <algorithm>
+#include "stdafx.h"
 #include "InputManagerVector.h"
-#include <iostream>
 
 std::vector<int> InputManagerVector::downKeys(sf::Keyboard::KeyCount);
 std::vector<int> InputManagerVector::heldKeys(sf::Keyboard::KeyCount);

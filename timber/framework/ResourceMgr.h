@@ -1,8 +1,6 @@
 #pragma once
-#include <iostream>
+#include "stdafx.h"
 #include "Singleton.h"
-#include <unordered_map>
-#include <vector>
 
 template <typename T>
 class ResourceMgr : public Singleton<ResourceMgr<T>>
@@ -87,3 +85,7 @@ public:
 
 template<typename T>
 T ResourceMgr<T>::Empty;
+
+#define TEXTURE_MGR (ResourceMgr<sf::Texture>::Instance())
+#define FONT_MGR (ResourceMgr<sf::Font>::Instance())
+#define SOUNDBUFFER_MGR (ResourceMgr<sf::SoundBuffer>::Instance())
