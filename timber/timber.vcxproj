@@ -138,6 +138,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BackgroundElementGO.cpp" />
     <ClCompile Include="framework\FrameWork.cpp" />
     <ClCompile Include="framework\GameObject.cpp" />
     <ClCompile Include="framework\InputManager.cpp" />
@@ -157,6 +158,7 @@
     <ClCompile Include="framework\TextGO.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BackgroundElementGO.h" />
     <ClInclude Include="framework\FrameWork.h" />
     <ClInclude Include="framework\Defines.h" />
     <ClInclude Include="framework\GameObject.h" />

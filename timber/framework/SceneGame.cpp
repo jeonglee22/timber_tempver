@@ -2,6 +2,7 @@
 #include "SceneGame.h"
 #include "SpriteGO.h"
 #include "TextGO.h"
+#include "BackgroundElementGO.h"
 
 SceneGame::SceneGame()
 	:Scene(SceneIds::Game)
@@ -15,21 +16,14 @@ SceneGame::~SceneGame()
 
 void SceneGame::Init()
 {
-    textIds.push_back("graphics/player.png");
-    fontIds.push_back("fonts/KOMIKAP_.ttf");
+    textIds.push_back("graphics/background.png");
+    textIds.push_back("graphics/cloud.png");
 
-    SpriteGO* spriteGo = new SpriteGO("graphics/player.png");
-    spriteGo->setOrigin(Origins::TC);
+    AddGameObject(new SpriteGO("graphics/background.png"));
 
-    TextGO* textGo = new TextGO("fonts/KOMIKAP_.ttf");
-    textGo->setOrigin(Origins::MC);
-    textGo->setFontSize(100);
-    textGo->setText("test string");
-    textGo->setPosition({ 1366 / 2.f, 768 / 2.f });
-
-    AddGameObject(spriteGo);
-    AddGameObject(textGo);
-
+    auto element = (BackgroundElementGO*) AddGameObject(new BackgroundElementGO("graphics/cloud.png"));
+    element->setSpeed(100.f);
+    element->setDirection({ 1.f,0.f });
     Scene::Init();
 }
 

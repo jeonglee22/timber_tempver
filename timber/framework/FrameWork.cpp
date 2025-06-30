@@ -11,7 +11,6 @@ void FrameWork::Init(int w, int h, const std::string& t)
 
 	InputManager::Init();
 	SCENE_MGR.Init();
-
 }
 
 void FrameWork::Do()
@@ -44,8 +43,6 @@ void FrameWork::Do()
         SCENE_MGR.Draw(window);
         window.display();
     }
-
-    SCENE_MGR.Release();
 }
 
 void FrameWork::Release()
@@ -55,6 +52,4 @@ void FrameWork::Release()
 	SOUNDBUFFER_MGR.UnLoad(soundIds);
 	FONT_MGR.UnLoad(fontIds);
 	TEXTURE_MGR.UnLoad(textIds);
-	
-	
 }

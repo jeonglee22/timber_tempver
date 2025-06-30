@@ -57,6 +57,9 @@
     <ClCompile Include="framework\FrameWork.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="BackgroundElementGO.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework\InputManagerVector.h">
@@ -105,6 +108,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="framework\FrameWork.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="BackgroundElementGO.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
