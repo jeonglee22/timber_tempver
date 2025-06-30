@@ -15,6 +15,9 @@ SceneGame::~SceneGame()
 
 void SceneGame::Init()
 {
+    textIds.push_back("graphics/player.png");
+    fontIds.push_back("fonts/KOMIKAP_.ttf");
+
     SpriteGO* spriteGo = new SpriteGO("graphics/player.png");
     spriteGo->setOrigin(Origins::TC);
 
@@ -28,4 +31,16 @@ void SceneGame::Init()
     AddGameObject(textGo);
 
     Scene::Init();
+}
+
+void SceneGame::Enter()
+{
+    Scene::Enter();
+
+}
+
+void SceneGame::Exit()
+{
+    Scene::Exit();
+
 }

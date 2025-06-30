@@ -27,6 +27,10 @@ void Scene::Release()
 
 void Scene::Enter()
 {
+	TEXTURE_MGR.Load(textIds);
+	FONT_MGR.Load(fontIds);
+	SOUNDBUFFER_MGR.Load(soundIds);
+
 	for (auto obj : gameObjects)
 	{
 		obj->Reset();
@@ -35,7 +39,9 @@ void Scene::Enter()
 
 void Scene::Exit()
 {
-
+	TEXTURE_MGR.UnLoad(textIds);
+	FONT_MGR.UnLoad(fontIds);
+	SOUNDBUFFER_MGR.UnLoad(soundIds);
 }
 
 void Scene::Update(float dt)

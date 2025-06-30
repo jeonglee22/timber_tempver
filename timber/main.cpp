@@ -7,9 +7,6 @@ int main()
 {
     sf::RenderWindow window(sf::VideoMode(1366, 768), "SFML works!");
 
-    TEXTURE_MGR.Load("graphics/player.png");
-    FONT_MGR.Load("fonts/KOMIKAP_.ttf");
-
     SCENE_MGR.Init();
 
     while (window.isOpen())
