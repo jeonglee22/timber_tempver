@@ -11,5 +11,7 @@ public:
 	static int RandomRange(int min, int maxExclude); // int min ~ max
 	static float RandomRange(float min, float max); // float min ~ max
 
+	static Sides ChooseSide();
+
 };
 

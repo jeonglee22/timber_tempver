@@ -48,3 +48,11 @@ float Utils::RandomRange(float min, float max)
 {
 	return ((float)rand() / RAND_MAX) * (max - min) + min;
 }
+
+Sides Utils::ChooseSide()
+{
+	if (RandomValue() < 0.5f)
+		return Sides::Left;
+	else
+		return Sides::Right;
+}

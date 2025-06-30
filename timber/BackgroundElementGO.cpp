@@ -27,20 +27,12 @@ void BackgroundElementGO::SetSide(Sides side)
 	}
 }
 
-Sides BackgroundElementGO::chooseSide()
-{
-	if (Utils::RandomValue() < 0.5f)
-		return Sides::Left;
-	else
-		return Sides::Right;
-}
-
 void BackgroundElementGO::Reset()
 {
 	SpriteGO::Reset();
 
 	setOrigin(Origins::MC);
-	SetSide(chooseSide());
+	SetSide(Utils::ChooseSide());
 	setPosition({ Utils::RandomRange(600.f, 1300.f), Utils::RandomRange(100.f, 400.f) });
 }
 
@@ -54,6 +46,6 @@ void BackgroundElementGO::Update(float dt)
 
 	if (pos.x < -200.f || pos.x > window.width + 200.f)
 	{
-		SetSide(chooseSide());
+		SetSide(Utils::ChooseSide());
 	}
 }

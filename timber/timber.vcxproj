@@ -138,6 +138,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BackgroundBee.cpp" />
     <ClCompile Include="BackgroundElementGO.cpp" />
     <ClCompile Include="framework\FrameWork.cpp" />
     <ClCompile Include="framework\GameObject.cpp" />
@@ -159,6 +160,7 @@
     <ClCompile Include="TreeGO.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BackgroundBee.h" />
     <ClInclude Include="BackgroundElementGO.h" />
     <ClInclude Include="framework\FrameWork.h" />
     <ClInclude Include="framework\Defines.h" />
