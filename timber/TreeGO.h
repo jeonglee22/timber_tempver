@@ -16,6 +16,7 @@ public:
 
 	void setPosition(const sf::Vector2f& pos) override;
 	void UpdateBranches();
+	void setBranchesScale();
 
 	// GameObject을(를) 통해 상속됨
 	void Init() override;

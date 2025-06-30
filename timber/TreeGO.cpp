@@ -12,6 +12,29 @@ void TreeGO::setPosition(const sf::Vector2f& pos)
 
 void TreeGO::UpdateBranches()
 {
+	for (int i = branches.size()-1; i > 0; i--)
+	{
+		branchSides[i] = branchSides[i - 1];
+		
+	}
+	branchSides[0] = (Sides)Utils::RandomRange(0, 3);
+	setBranchesScale();
+}
+
+void TreeGO::setBranchesScale()
+{
+	for (int i = 0; i < branches.size(); i++)
+	{
+		switch (branchSides[i])
+		{
+		case Sides::Right:
+			branches[i].setScale(1.f, 1.f);
+			break;
+		case Sides::Left:
+			branches[i].setScale(-1.f, 1.f);
+			break;
+		}
+	}
 }
 
 void TreeGO::Init()
@@ -57,6 +80,10 @@ void TreeGO::Reset()
 
 void TreeGO::Update(float dt)
 {
+	if (InputManager::GetKeyDown(sf::Keyboard::Left) || InputManager::GetKeyDown(sf::Keyboard::Right))
+	{
+		UpdateBranches();
+	}
 }
 
 void TreeGO::Draw(sf::RenderWindow& window)

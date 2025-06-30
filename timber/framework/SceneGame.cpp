@@ -27,8 +27,6 @@ void SceneGame::Init()
     for (int i = 0; i < 3; i++)
     {
         auto element = (BackgroundElementGO*)AddGameObject(new BackgroundElementGO("graphics/cloud.png"));
-        element->setSpeed(Utils::RandomRange(300.f, 500.f));
-        element->setDirection({ 1.f,0.f });
     }
 
     AddGameObject(new TreeGO());
