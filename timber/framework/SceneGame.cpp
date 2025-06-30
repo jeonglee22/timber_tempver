@@ -3,6 +3,7 @@
 #include "SpriteGO.h"
 #include "TextGO.h"
 #include "BackgroundElementGO.h"
+#include "TreeGo.h"
 
 SceneGame::SceneGame()
 	:Scene(SceneIds::Game)
@@ -18,12 +19,20 @@ void SceneGame::Init()
 {
     textIds.push_back("graphics/background.png");
     textIds.push_back("graphics/cloud.png");
+    textIds.push_back("graphics/tree.png");
+    textIds.push_back("graphics/branch.png");
 
     AddGameObject(new SpriteGO("graphics/background.png"));
 
-    auto element = (BackgroundElementGO*) AddGameObject(new BackgroundElementGO("graphics/cloud.png"));
-    element->setSpeed(100.f);
-    element->setDirection({ 1.f,0.f });
+    for (int i = 0; i < 3; i++)
+    {
+        auto element = (BackgroundElementGO*)AddGameObject(new BackgroundElementGO("graphics/cloud.png"));
+        element->setSpeed(Utils::RandomRange(300.f, 500.f));
+        element->setDirection({ 1.f,0.f });
+    }
+
+    AddGameObject(new TreeGO());
+
     Scene::Init();
 }
 

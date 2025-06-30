@@ -14,6 +14,11 @@ public:
 	sf::Vector2f getDirection() const { return direction; };
 	void setDirection(sf::Vector2f direction) { this->direction = direction; };
 
+	void SetSide(Sides side);
+	Sides chooseSide();
+
+	void Reset() override;
+
 	void Update(float dt) override;
 };
 

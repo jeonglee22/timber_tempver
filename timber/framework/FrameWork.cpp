@@ -4,6 +4,7 @@
 void FrameWork::Init(int w, int h, const std::string& t)
 {
 	window.create(sf::VideoMode(w, h), t);
+    Utils::Init();
 
 	TEXTURE_MGR.Load(textIds);
 	FONT_MGR.Load(fontIds);

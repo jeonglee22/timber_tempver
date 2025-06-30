@@ -156,6 +156,7 @@
     </ClCompile>
     <ClCompile Include="framework\Utils.cpp" />
     <ClCompile Include="framework\TextGO.cpp" />
+    <ClCompile Include="TreeGO.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BackgroundElementGO.h" />
@@ -175,6 +176,7 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="framework\Utils.h" />
     <ClInclude Include="framework\TextGO.h" />
+    <ClInclude Include="TreeGO.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
