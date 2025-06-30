@@ -6,7 +6,7 @@ class SceneMgr : public Singleton<SceneMgr>
 
 protected:
 	SceneMgr() = default;
-	~SceneMgr() = default;
+	~SceneMgr() override = default;
 
 	std::vector<Scene*> scenes;
 

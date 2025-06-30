@@ -39,9 +39,9 @@ void Scene::Enter()
 
 void Scene::Exit()
 {
-	TEXTURE_MGR.UnLoad(textIds);
-	FONT_MGR.UnLoad(fontIds);
 	SOUNDBUFFER_MGR.UnLoad(soundIds);
+	FONT_MGR.UnLoad(fontIds);
+	TEXTURE_MGR.UnLoad(textIds);
 }
 
 void Scene::Update(float dt)

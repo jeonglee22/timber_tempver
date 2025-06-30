@@ -138,6 +138,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="framework\FrameWork.cpp" />
     <ClCompile Include="framework\GameObject.cpp" />
     <ClCompile Include="framework\InputManager.cpp" />
     <ClCompile Include="framework\InputManagerVector.cpp" />
@@ -156,6 +157,7 @@
     <ClCompile Include="framework\TextGO.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="framework\FrameWork.h" />
     <ClInclude Include="framework\Defines.h" />
     <ClInclude Include="framework\GameObject.h" />
     <ClInclude Include="framework\InputManager.h" />
