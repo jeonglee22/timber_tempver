@@ -10,9 +10,7 @@ int main()
     TEXTURE_MGR.Load("graphics/player.png");
     FONT_MGR.Load("fonts/KOMIKAP_.ttf");
 
-    SceneGame sceneGame;
-    sceneGame.Init();
-    sceneGame.Enter();
+    SCENE_MGR.Init();
 
     while (window.isOpen())
     {
@@ -29,15 +27,15 @@ int main()
 
         // update
         InputManager::Update(0);
-        sceneGame.Update(0);
+        SCENE_MGR.Update(0);
 
         // draw
         window.clear();
-        sceneGame.Draw(window);
+        SCENE_MGR.Draw(window);
         window.display();
     }
 
-    sceneGame.Release();
+    SCENE_MGR.Release();
 
     return 0;
 }

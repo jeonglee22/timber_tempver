@@ -42,7 +42,10 @@
     <ClCompile Include="framework\Scene.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="SceneGame.cpp">
+    <ClCompile Include="framework\SceneGame.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="framework\SceneMgr.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -80,7 +83,10 @@
     <ClInclude Include="framework\Scene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="SceneGame.h">
+    <ClInclude Include="framework\SceneGame.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="framework\SceneMgr.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

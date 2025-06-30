@@ -21,3 +21,4 @@
 #include "Utils.h"
 #include "GameObject.h"
 #include "Scene.h"
+#include "SceneMgr.h"
